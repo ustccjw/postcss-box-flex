@@ -11,7 +11,7 @@ const plugin = postcss.plugin('postcss-box-flex', () => css => {
     if (/box$/.test(decl.value)) {
       const rule = postcss.rule({ selector: `${decl.parent.selector} > *` })
       rule.append(postcss.decl({ prop: 'display', value: 'block' }))
-      css.append(rule)
+      css.prepend(rule)
     }
   })
 })
