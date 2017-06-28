@@ -13,4 +13,10 @@ describe('box-flex', () => {
     const res = await postcss([plugin()]).process(input)
     expect(res.css).toBe('div > * { display: block } div { display: -webkit-box } span { width: 1px; -webkit-box-flex: 1; }')
   })
+
+  test('width: auto; box-flex: 1', async () => {
+    const input = 'div { display: -webkit-box } span { -webkit-box-flex: 1; width: auto; }'
+    const res = await postcss([plugin()]).process(input)
+    expect(res.css).toBe('div > * { display: block } div { display: -webkit-box } span { -webkit-box-flex: 1; width: auto; }')
+  })
 })
