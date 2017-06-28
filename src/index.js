@@ -16,10 +16,14 @@ const plugin = postcss.plugin('postcss-box-flex', () => css => {
       }
     }
   })
+
   css.walkDecls(/^display$/, decl => {
     if (/box$/.test(decl.value)) {
       const rule = postcss.rule({ selector: `${decl.parent.selector} > *` })
       rule.append(postcss.decl({ prop: 'display', value: 'block' }))
+      rule.append(postcss.decl({ prop: '-webkit-box-flex', value: '1' }))
+      rule.append(postcss.decl({ prop: '-webkit-flex', value: '1' }))
+      rule.append(postcss.decl({ prop: 'flex', value: 'auto' }))
       css.prepend(rule)
     }
   })
