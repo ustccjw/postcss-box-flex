@@ -11,22 +11,6 @@ const plugin = postcss.plugin('postcss-box-flex', () => css => {
       css.prepend(rule)
     }
   })
-
-  css.walkDecls(/box-flex$/, decl => {
-    if (+decl.value === 1) {
-      let width = false
-      for (const decl2 of decl.parent.nodes) { // eslint-disable-line no-restricted-syntax
-        if (decl2.prop === 'width') {
-          width = true
-          break
-        }
-      }
-      if (!width) {
-        const widthDecl = postcss.decl({ prop: 'width', value: '1px' })
-        decl.parent.prepend(widthDecl)
-      }
-    }
-  })
 })
 
 export default plugin
