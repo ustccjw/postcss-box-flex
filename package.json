@@ -1,6 +1,6 @@
 {
   "name": "postcss-box-flex",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "adapter for box flex",
   "keywords": [
     "box-flex",
