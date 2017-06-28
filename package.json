@@ -1,6 +1,6 @@
 {
   "name": "postcss-box-flex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "adapter for box flex",
   "keywords": [
     "box-flex",
@@ -18,21 +18,22 @@
     "url": "git+https://github.com/ustccjw/unhandled-rejection.git"
   },
   "scripts": {
-    "test": "jest",
     "build": "tnpm run clean && babel src -d lib",
     "clean": "rimraf lib",
     "lint": "eslint .",
-    "prepublish": "tnpm test && tnpm run build"
+    "prepublish": "tnpm test && tnpm run build",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-cli": "6",
     "babel-preset-ustccjw": "1",
+    "babel-runtime": "6",
     "eslint": "3",
     "eslint-config-ustccjw": "1",
     "jest": "20",
+    "postcss": "6",
     "pre-commit": "1",
-    "rimraf": "2",
-    "postcss": "6"
+    "rimraf": "2"
   },
   "peerDependencies": {
     "babel-runtime": "6",
@@ -41,12 +42,12 @@
   "engines": {
     "node": "7"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "jest": {
     "testMatch": [
       "**/test/**/*.js"
     ]
-  }
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
