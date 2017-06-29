@@ -3,7 +3,7 @@ import postcss from 'postcss'
 const plugin = postcss.plugin('postcss-box-flex', () => css => {
   css.walkDecls(/^display$/, decl => {
     if (/box$/.test(decl.value)) {
-      const rule = postcss.rule({ selector: `${decl.parent.selector} > *` })
+      const rule = postcss.rule({ selector: `${decl.parent.selector} > :not(div):not(section)` })
       rule.append(postcss.decl({ prop: 'display', value: 'block' }))
       rule.append(postcss.decl({ prop: '-webkit-box-flex', value: '0' }))
       rule.append(postcss.decl({ prop: '-webkit-flex', value: '0' }))
