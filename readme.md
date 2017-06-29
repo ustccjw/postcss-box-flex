@@ -5,8 +5,9 @@ postcss-box-flex
 add a rule prepend css when div `display: -webkit-box`, use after autoprefixer
 
 ````css
-div > * {
-  display: block;
+div > *，
+div::before,
+div::after {
   -webkit-box-flex: 0;
   -webkit-flex: 0;
   flex: none;
