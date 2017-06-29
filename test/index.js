@@ -5,6 +5,6 @@ describe('box-flex', () => {
   test('box-flex', async () => {
     const input = 'div { display: -webkit-box }'
     const res = await postcss([plugin()]).process(input)
-    expect(res.css).toBe('div > *, div::before, div::after { display: block; -webkit-box-flex: 0; -webkit-flex: 0; flex: none }\ndiv { display: -webkit-box }')
+    expect(res.css).toBe('div > *, div::before, div::after { -webkit-box-flex: 0; -webkit-flex: 0; flex: none }\ndiv { display: -webkit-box }')
   })
 })
