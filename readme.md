@@ -9,7 +9,7 @@ div > *，
 div::before,
 div::after {
   -webkit-box-flex: 0;
-  -webkit-flex: 0;
+  -webkit-flex: none;
   flex: none;
 }
 ````
