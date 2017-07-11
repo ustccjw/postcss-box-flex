@@ -1,6 +1,6 @@
 {
   "name": "postcss-box-flex",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "adapter for box flex",
   "keywords": [
     "box-flex",
@@ -36,7 +36,6 @@
     "rimraf": "2"
   },
   "peerDependencies": {
-    "babel-runtime": "6",
     "postcss": "6"
   },
   "engines": {
