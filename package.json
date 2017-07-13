@@ -1,6 +1,6 @@
 {
   "name": "postcss-box-flex",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "adapter for box flex",
   "keywords": [
     "box-flex",
@@ -27,7 +27,6 @@
   "devDependencies": {
     "babel-cli": "6",
     "babel-preset-ustccjw": "1",
-    "babel-runtime": "6",
     "eslint": "3",
     "eslint-config-ustccjw": "1",
     "jest": "20",
