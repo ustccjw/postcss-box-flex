@@ -6,7 +6,8 @@ const plugin = postcss.plugin('postcss-box-flex', () => root => {
     const { selector } = parent
     if (/box$/.test(value)) {
       selector.split(',').forEach(selector2 => {
-        if (!/(:before|:after)$/.test(selector)) {
+        selector2 = selector2.trim() // eslint-disable-line no-param-reassign
+        if (!/(:before|:after)$/.test(selector2)) {
           const rule = postcss.rule({ selector: `${selector2} > *, ${selector2}::before, ${selector2}::after` })
           rule.append(postcss.decl({ prop: '-webkit-box-flex', value: '0' }))
           rule.append(postcss.decl({ prop: '-webkit-flex', value: 'none' }))
